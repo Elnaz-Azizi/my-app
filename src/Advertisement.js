@@ -1,20 +1,16 @@
 import React from "react";
 import MyButton from "./MyButton";
-import AdImage from "./AdImage";
-import AdTitle from "./AdTitle";
-import AdText from "./AdText";
-import AdContact from "./AdContact";
 
-const Advertisement = ({ image, title, text, contact }) => {
+const Advertisement = ({ image, title, text, contact, id }) => {
+
   return (
-    <div className="card mb-4 col-md-4">
-      <AdImage src={image} alt={title} />
-
-      <div className="card-body">
-        <AdTitle title={title} />
-        <AdText text={text} />
-        <AdContact contact={contact} />
-      </div>
+    <div key={id} className="card mb-4 col-md-4">
+        <img class="card-img-top" src={image} alt={title} />
+        <div class="card-body">
+          <h5 class="card-title">{title}</h5>
+          <p class="card-text">{text}</p>
+          <p class="card-text">Contact: {contact}</p>
+        </div>
       <div className="card-footer">
         <MyButton title="Details" color="primary" />
       </div>
